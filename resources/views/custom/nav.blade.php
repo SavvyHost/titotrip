@@ -7,7 +7,6 @@
             <div class="show-side flex-start pointer">
                 <span class="material-symbols-outlined go-icon">menu</span>
             </div>
-
             <a href="/" class="logo"> <img src="static/image/public/black-tito.png"> </a>
             {{-- <a href="/" class="logo no-select">MemnonTravel</a> --}}
 
