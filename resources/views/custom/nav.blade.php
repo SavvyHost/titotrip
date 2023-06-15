@@ -161,7 +161,7 @@
         <div class="side full-height">
 
             <div class="first full-width flex-space">
-                <a href="/" class="flex no-select">MemnonTravel</a>
+            <a href="/" class="logo"> <img src="static/image/public/black-tito.png"> </a>
                 <div class="close-side circle pointer flex">
                     <span class="material-symbols-outlined go-icon">close</span>
                 </div>

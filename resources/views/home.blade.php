@@ -67,7 +67,7 @@
 
         <div class="main flex-column">
 
-            <div class="title"> Why book with MemnonTravel ? </div>
+            <div class="title"> Why book with TitoTrip ? </div>
 
             <div class="full-width flex feat1 wy1">
 
