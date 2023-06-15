@@ -653,6 +653,9 @@ footer{
         min-height: 50px;
         .logo{
             margin: -3px 0 0 -2px;
+            img{
+                height: 100%;
+            }
         }
         .show-side{
             span{
