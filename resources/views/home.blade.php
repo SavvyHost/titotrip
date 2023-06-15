@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'MemnonTravel')
+@section('title', 'Best Egypt Tours & Excursions for 2023')
 @section('content')
 
     <main>
