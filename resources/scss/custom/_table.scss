@@ -1,0 +1,397 @@
+
+:root{
+    --table-back: #FFF;
+    --table-border: #ddd;
+    --table-hover: rgb(250, 250, 250);
+    --table-shadow: none;
+    --table-hash: #666;
+    --table-scroll: #111;
+    --table-color: #333;
+    --table-padding: .7rem 1rem 2rem 1rem;
+    --table-border-radius: 0;
+    --table-checkbox-border: #999;
+    --table-checkbox-active: #326666;
+    --table-option-back: #326666;
+    --table-option-hover: #1b4949;
+    --table-option-color: #FFF;
+    --table-pagination-margin: 1.5rem 0 0 0;
+    --table-pagination-flex: flex-start;
+    --table-pagination-border: #326666;
+    --table-pagination-hover: rgb(229, 227, 227);
+    --table-pagination-active-back: #3f9b9b;
+    --table-pagination-active-color: #FFF;
+    --table-pagination-none: rgb(170, 170, 170);
+    --table-menu-shadow: .1rem .1rem .5rem #7772;
+    --table-menu-back: #FFF;
+    --table-menu-border: #999;
+    --table-menu-color: #326666;
+    --table-menu-hover-back: #326666;
+    --table-menu-hover-color: #FFF;
+    --table-select-color: #666;
+    --table-select-hover: #549393;
+    --table-select-hover-color: rgb(3, 48, 63);
+    --table-button-back: rgb(71, 77, 77);
+    --table-button-hover: rgb(37, 45, 45);
+    --table-button-color: #FFF;
+}
+
+.table{
+    width: 100%; height: auto; margin: auto;
+    position: relative;
+
+    .table-div{
+        background-color: var(--table-back);
+        border: 1px solid var(--table-border);
+        padding: var(--table-padding);
+        box-shadow: var(--table-shadow);
+        width: 100%; margin: 0;
+        overflow-x: auto;
+
+        .empty{
+            width: 100%; display: flex; justify-content: center;
+            align-items: center; font-size: .9rem; color: var(--table-hash);
+            margin: 2.5rem 0;
+        }
+    }
+    table{
+        background-color: var(--table-back);
+        width: 100%; margin: 0;
+
+        tr{
+            border-top: 1px solid var(--table-border);
+            cursor: default;
+            th, td{
+                border: 0; padding: 1rem; color: var(--table-color);
+                text-align: left; font-size: .9rem;
+                white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+                &:first-child{ padding: .8rem 1rem .8rem .7rem; }
+                &:last-child{ padding: .8rem .7rem .8rem 1rem; }
+            }
+            td{ font-size: .88rem; }
+            .option{
+                width: auto; min-width: 6rem;
+                display: flex; justify-content: flex-end; align-items: center;
+                > div{
+                    display: flex; justify-content: flex-end;
+                    align-items: center; width: 3rem;
+                }
+                .show-options{
+                    padding: .15rem 0; width: 100%;
+                    border-radius: var(--table-border-radius);
+                    cursor: pointer;
+                    display: flex; justify-content: center;
+                    align-items: center; background: var(--table-option-back);
+
+                    &:hover{ background: var(--table-option-hover); }
+                    i{
+                        font-size: .8rem;
+                        color: var(--table-option-color);
+                    }
+                    span{
+                        font-size: 1.4rem;
+                        color: var(--table-option-color);
+                        margin: -1px -5px 0 0;
+                    }
+                }
+            }
+            &:hover{ background: var(--table-hover); }
+        }
+        .thead{
+            border: 0; border-bottom: 2px solid var(--table-border);
+            &:hover{ background: none; }
+            .all-actions{
+                width: 100%; cursor: pointer;
+                display: flex; justify-content: center; align-items: center;
+
+                span{
+                    font-size: 1.5rem; color: var(--table-hash);
+                    &:hover{ color: var(--table-color); }
+                }
+            }
+        }
+        .box{
+            width: auto; min-width: 3rem;
+        }
+        .checkbox{
+            display: flex; justify-content: flex-start;
+            align-items: center; cursor: pointer;
+            width: 1rem; height: 1rem; margin-top: 5px;
+            border-radius: var(--table-border-radius);
+            border: 1px solid var(--table-checkbox-border);
+
+            i{
+                font-size: .75rem; color: var(--table-checkbox-active);
+                margin: -.7px 0 0 1px; display: none;
+            }
+            &.active{
+                border-color: var(--table-checkbox-active);
+                i{ display: block; }
+            }
+        }
+    }
+    .pagination{
+
+        display: flex; justify-content: var(--table-pagination-flex);
+        align-content: center; margin: var(--table-pagination-margin);
+
+        > div { display: flex; justify-content: flex; align-content: center; }
+        .list{
+            display: flex; justify-content: center;
+            align-content: center;
+        }
+        a, .next, .prev{
+            cursor: pointer;
+            width: 1.8rem; height: 1.8rem;
+            font-size: .9rem;
+            color: var(--table-pagination-border);
+            border: 1px solid var(--table-pagination-border);
+            display: flex; justify-content: center;
+            align-items: center; padding: 1px 0 0 0;
+            border-radius: var(--table-border-radius);
+            margin: 0 .1rem;
+
+            span{ font-size: 1.1rem; }
+            &:hover{
+                background: var(--table-pagination-hover);
+                color: var(--table-pagination-border);
+            }
+            &.active{
+                background: var(--table-pagination-active-back);
+                color: var(--table-pagination-active-color);
+            }
+            &.none{
+                cursor: default; background: none;
+                border: 1px solid var(--table-pagination-none);
+                color: var(--table-pagination-none);
+                span{ color: var(--table-pagination-none); }
+            }
+        }
+    }
+    .table-menu{
+        display: none; justify-content: center;
+        align-items: center; position: absolute;
+        background: var(--table-menu-back);
+        border: 1px solid var(--table-menu-border);
+        box-shadow: var(--table-menu-shadow);
+        border-radius: var(--table-border-radius);
+        padding: .5rem .3rem;
+        z-index: 2; min-width: 6rem;
+
+        ul{
+            width: 100%; margin: 0;
+            display: flex; justify-content: center;
+            align-items: center; flex-direction: column;
+
+            li{
+                width: 100%;
+                cursor: pointer; display: flex;
+                justify-content: flex-start; align-items: center;
+                padding: .4rem 1rem .4rem .4rem; border-radius: var(--table-border-radius);
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+
+                p{ padding: 0; margin: 0; font-size: .85rem; color: var(--table-menu-color); }
+                span, i{
+                    padding: 0; margin: 0 .7rem 0 0;
+                    font-size: 1.1rem; color: var(--table-menu-color);
+                }
+                i{ font-size: .8rem; margin: 0 .7rem 0 .3rem; }
+                &:hover{
+                    background: var(--table-menu-hover-back);
+                    p, span, i{ color: var(--table-menu-hover-color); }
+                }
+            }
+        }
+    }
+    .actions{
+        width: 100%; display: flex; flex-wrap: wrap;
+        justify-content: space-between; align-items: flex-end;
+
+        .select-box{
+            display: flex; justify-content: flex-start;
+            align-items: center; flex-wrap: wrap;
+        }
+        .select{
+            margin: 1rem 2rem 1rem 0; position: relative;
+            display: flex; align-items: center; justify-content: center;
+            > div{
+                width: 100%;
+                display: flex; justify-content: center;
+                align-items: center;
+            }
+            .show-select-options{
+                min-width: 6rem; padding: .45rem .5rem .45rem .6rem;
+                border-radius: var(--table-border-radius);
+                cursor: pointer; border: 1px solid var(--table-border);
+                box-shadow: var(--table-shadow);
+                margin: 0; display: flex; justify-content: space-between;
+                align-items: center; background: var(--table-back);
+
+                p, i, span{ padding: 0; margin: 0; font-size: .9rem; color: var(--table-select-color); }
+                i{ font-size: .9rem; }
+                span{ font-size: 1.2rem; margin-top: -1px; }
+                &:hover, &.active{ border-color: var(--table-select-hover); p, i, span{ color: var(--table-select-hover-color); } }
+            }
+            label{
+                font-size: .85rem; padding: 0 .6rem 0 0; margin: 0;
+                color: var(--table-select-color);
+            }
+            .select-options{
+                position: absolute; top: 2.5rem; right: 0; z-index: 9;
+                min-width: 6rem; background: var(--table-back);
+                border: 1px solid var(--table-select-hover);
+                border-radius: var(--table-border-radius);
+                box-shadow: var(--table-shadow);
+                display: none; overflow: hidden; padding: 1px;
+
+                .options{
+                    max-height: 15.6rem; overflow-y: auto;
+                    scroll-behavior: auto; width: 100%;
+                    @include Scroll($width: .25rem, $color: var(--table-menu-hover-back), $border: var(--table-border-radius));
+
+                    ul{
+                        width: 100%; display: flex; justify-content: center;
+                        margin: 0; padding: .3rem .25rem;
+                        align-items: center; flex-direction: column;
+
+                        li{
+                            font-size: .9rem; padding: .3rem .7rem; margin: 1px 0;
+                            color: var(--table-select-color); width: 100%;
+                            display: flex; justify-content: flex-start;
+                            align-items: center; cursor: pointer;
+                            border-radius: var(--table-border-radius);
+                            -webkit-touch-callout: none; -webkit-user-select: none;
+                            -khtml-user-select: none; -moz-user-select: none;
+                            -ms-user-select: none; user-select: none;
+        
+                            &:hover{
+                                background: var(--table-select-hover);
+                                color: var(--table-menu-hover-color);
+                            }
+                            &.active{
+                                background: var(--table-menu-hover-back);
+                                color: var(--table-menu-hover-color);
+                            }
+                            i{ font-size: .95rem; width: 1.5rem; }
+                            span{ font-size: .95rem; width: 1.6rem; }
+                        }
+                    }
+                }
+            }
+            &.filter{
+                .show-select-options{ min-width: 9rem; }
+                .select-options{ min-width: 9rem; }
+            }
+            &:last-child{ margin-right: 0; }
+        }
+        .input{
+            width: 50%; margin: 1rem 0; position: relative;
+            background: var(--table-back); display: flex;
+            justify-content: center; align-items: center;
+
+            .entry{
+                display: flex; justify-content: center; width: 100%;
+                align-items: center; border: 1px solid var(--table-border);
+                border-radius: var(--table-border-radius); overflow: hidden;
+                box-shadow: var(--table-shadow); background: rgba(0, 0, 0, .03);
+
+                span, i{
+                    width: 3rem; display: flex; justify-content: center; align-items: center;
+                    font-size: .85rem; color: var(--table-select-color);
+                    padding: .5rem 0;
+                }
+                input{
+                    width: 100%; padding: .45rem .8rem; font-size: var(--table-color);
+                    font-size: .9rem; border-left: 1px solid var(--table-border);
+                    background: var(--table-back);
+                }
+                &.active{
+                    border: 1px solid var(--table-menu-border);
+                    input{ border-color: var(--table-menu-border); }
+                }
+            }
+            .buttons{
+                padding: 0 0 0 .5rem; margin: 0;
+                button{
+                    box-shadow: var(--table-shadow); font-size: .9rem;
+                    padding: .49rem 1rem; cursor: pointer; outline: none;
+                    background: var(--table-button-back); letter-spacing: .5px;
+                    color: var(--table-button-color);
+                    border-radius: var(--table-border-radius);
+
+                    &:hover{ background: var(--table-button-hover); }
+                }
+            }
+        }
+    }
+    .found{
+        display: flex; justify-content: flex-end;
+        align-items: center; font-style: italic;
+        margin: 0 auto .5rem;
+
+        > div{
+            display: flex; justify-content: flex;
+            align-items: center;
+        }
+        .p{
+            font-size: .85rem; color: var(--table-color);
+            span{
+                font-size: .88rem; color: var(--table-hash);
+                padding: 0 .3rem;
+            }
+        }
+    }
+}
+
+.full{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%; z-index: 999;
+    display: none; justify-content: center;
+    align-items: center; background: rgba(0, 0, 0, .5);
+
+    .message{
+        width: 20rem; background-color: var(--table-back);
+        display: flex; justify-content: center;
+        align-items: center; flex-direction: column;
+        box-shadow: var(--table-shadow); border-radius: var(--table-border-radius);
+        border: 1px solid var(--table-border); padding: 0 0 1rem 0;
+
+        .first{
+            width: 100%; display: flex; padding: .7rem .7rem .7rem 1rem; border-bottom: 1px solid var(--table-border);
+            justify-content: space-between; align-items: center;
+
+            > div{
+                display: flex; justify-content: center; align-items: center;
+                font-size: .95rem; color: var(--table-color);
+                span{ font-size: 1.2rem; color: var(--table-color); width: 1.7rem; margin: -2px 0 0 0; }
+            }
+            .close{
+                cursor: pointer; width: 2rem;
+                span{ font-size: 1.3rem; width: auto; margin: 0; }
+                &:hover{ color: var(--table-menu-hover-back); }
+            }
+        }
+        .selected{
+            width: 100%; display: flex; justify-content: center; padding: 0 1rem;
+            align-items: center; margin: 1.2rem auto .2rem; font-style: italic;
+            p{ font-size: .9rem; color: var(--table-hash); padding: 0; margin: 0; }
+            span{ font-size: .9rem; color: var(--table-menu-hover-back); margin: 0 .2rem; }
+        }
+        ul{
+            width: 100%; padding: .5rem .5rem .5rem; margin: 0;
+            li{
+                margin: .2rem auto; border-radius: var(--table-border-radius);
+                width: 100%; padding: .5rem; cursor: pointer;
+                display: flex; justify-content: space-between; align-items: center;
+                > div{
+                    display: flex; justify-content: center; align-items: center;
+                    font-size: .9rem; color: var(--table-color);
+                    span{ font-size: 1.1rem; color: var(--table-color); width: 1.7rem; margin: -2px 0 0 0; }
+                }
+                > span{ font-size: 1.5rem; color: var(--table-hash); }
+                &:hover, &.active{  background-color: rgba(0, 0, 0, .1); }
+            }
+        }
+    }
+}

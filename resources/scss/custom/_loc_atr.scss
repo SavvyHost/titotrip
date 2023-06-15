@@ -1,0 +1,86 @@
+
+.se_header{
+    height: 21rem;
+    .name{
+        top: 0; left: 0; z-index: 99;
+        h1{
+            font-size: 4rem; color: var(--light-color1);
+            font-weight: bold; letter-spacing: 1px;
+        }
+    }
+}
+
+.loc{
+    .descibe{
+        font-size: .95rem; color: var(--color);
+        width: 80%; line-height: 160%;
+    }
+    .home-slider{
+        .swiper-wrapper{
+            justify-content: space-between;
+            .loc-card{
+                height: auto;
+                width: 32%; min-width: 20rem; background: var(--back); border: 1px solid var(--border);
+                box-shadow: var(--shadow); margin: 0 0 2rem; padding-bottom: 2rem;
+                border-radius: var(--border-radius); overflow: hidden;
+                h1{
+                    font-size: 1.1rem; padding: 1rem 0 0; text-overflow: ellipsis;
+                    line-height: 140%; height: 4.3rem; overflow: hidden;
+                }
+                h1, .p, .replys{ padding-left: 1rem; padding-right: 1rem; }
+                .image{
+                    height: 15rem; border-radius: 0;
+                }
+                &:hover{
+                    box-shadow: var(--shadow1);
+                    .image{ box-shadow: none; }
+                    h1{ text-decoration: none; }
+                }
+            }
+        }
+    }
+    .title{
+        font-size: 1.4rem; color: var(--color1);
+        margin: 0; padding: 0; font-weight: bold;
+        letter-spacing: 1px;
+    }   
+    .heading{
+        margin: 0 auto 2rem; color: var(--color1); font-weight: bold;
+        padding: 0 0 1rem 0; border-bottom: 1px solid var(--border);
+        letter-spacing: 1px;
+    } 
+}
+
+.destination{
+    background: #f1f3f5; padding: .1rem 0;
+
+    .buttons{
+        button{
+            margin: 0 auto 4rem; font-size: 1rem; font-weight: bold;
+            padding: 1rem; width: 20rem; cursor: pointer; letter-spacing: 1.5px;
+            color: var(--light-color1); background: var(--site-color);
+            border-radius: var(--border-radius); outline: none;
+            &:hover{ background: var(--site-color-hover); }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .loc{
+        .home-slider{
+            .swiper-wrapper{
+                .loc-card{ width: 48.5%; }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .loc{
+        .home-slider{
+            .swiper-wrapper{
+                .loc-card{ width: 100%; }
+            }
+        }
+    }
+}

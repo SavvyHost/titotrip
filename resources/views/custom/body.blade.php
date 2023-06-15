@@ -1,0 +1,10 @@
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="static/js/main.js"></script>
+<script src="static/js/custom/public.js"></script>
+<script src="static/js/custom/table.js"></script>
+<script src="static/js/custom/search.js"></script>
+<script src="static/js/custom/pages.js"></script>
+<script src="static/js/custom/account.js"></script>
+<script src="static/js/custom/auth.js"></script>

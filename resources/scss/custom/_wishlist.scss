@@ -1,0 +1,140 @@
+
+.wishlist{
+    .title{
+        width: 99%; margin: 1rem auto 1rem; padding: 0 0 1rem 0;
+        flex-direction: column; border-bottom: 1px solid var(--border);
+        p{
+            font-size: 1.3rem; color: var(--color); 
+            padding: .3rem 0; margin: 0; text-align: left;
+        }
+        p:last-child{
+            font-size: .9rem; color: var(--color); padding: 0;
+        }
+    }
+    .list-wishlist{
+        margin: 1rem auto 2rem;
+        a{
+            cursor: pointer; width: 30%;
+            margin: 1rem; border-radius: var(--border-radius);
+            *{ cursor: pointer; }
+            .image{
+                height: 14rem; border-radius: var(--border-radius); overflow: hidden;
+                img{ min-width: 100%; width: auto; min-height: 100%; height: auto; }
+            }
+            p{
+                font-size: .8rem; color: var(--color);
+                padding: .5rem 0; margin: 0;
+                i{ font-size: .9rem; color: var(--hash); }
+                span{ color: var(--color); margin: 0 .4rem; }
+            }
+            .p{
+                font-size: .8rem; margin: 0; padding: 0; color: var(--color1);
+            }
+            h1{
+                color: var(--color2); font-size: 1rem; font-weight: normal;
+                padding: .3rem 0; line-height: 130%; text-align: left; margin: 0;
+            }
+            .bold{
+                font-size: .95rem; font-weight: bold; color: var(--color1); margin: 0 .5rem;
+            }
+            .replys{
+                margin: .3rem auto;
+                .star{
+                    width: 1rem; margin: 0 .2rem 0 0;
+                    fill: var(--star); stroke: var(--star);
+                    &.empty{ fill: var(--background); }
+                }
+                span{
+                    padding-top: .1rem; color: var(--color1);
+                    font-size: .8rem; margin: 0 .3rem;
+                }
+            }
+            .favor{
+                top: .7rem; right: .7rem; box-shadow: var(--shadow);
+                background-color: var(--back);
+                width: 1.8rem; height: 1.8rem;
+                i{ margin: .1rem 0 0 .05rem; color: var(--color1); }
+                &:hover{ background: rgba(233, 231, 231, 0.9); }
+                &.del{ i{ color: var(--favor); } }
+            }
+            &:hover{
+                text-decoration: none;
+                .image{
+                    box-shadow: var(--shadow1);
+                }
+                h1{ text-decoration: underline; }
+            }
+            &.active{
+                .empty{ display: none; }
+                .fill{ display: block; color: var(--site-color-hover); }
+            }
+        }
+        .li{
+            box-shadow: var(--shadow); padding-bottom: 1rem;
+            outline: 1px solid var(--border);
+            &:hover{
+                box-shadow: var(--shadow1);
+                .image{ box-shadow: none; }
+                h1{ text-decoration: none; }
+            }
+            .image{ border-radius: 0; }
+            h1{ color: var(--color); font-size: .9rem; line-height: 150%; margin: 0; }
+            .location{ margin: .2rem auto 0; }
+            h1, p, .replys{ padding-left: .7rem; padding-right: .7rem; }
+        }
+    }
+    .empty{
+        margin: 4rem auto 4rem;
+        
+        .image{ padding: 1rem 1rem 2rem; img{ width: 40rem; } }
+        p, span{
+            font-size: 1.5rem; color: var(--color1); line-height: 180%;
+            width: 90%;
+        }
+        span{
+            font-size: .95rem; color: var(--color);
+        }
+        a{
+            font-size: 1rem; color: var(--light-color1); background: var(--link);
+            padding: .8rem; width: 20rem; border-radius: var(--border-radius);
+            margin: 2rem auto 0; cursor: pointer;
+            &:hover{
+                opacity: .9; text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .empty{
+        .image{
+            img{
+                max-width: 90%;
+            }
+        }
+        p{
+            font-size: 1rem;
+        }
+        span{
+            font-size: .8rem;
+        }
+    }
+    .wishlist{
+        .list-wishlist{
+            a{
+                width: 44%;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .wishlist{
+        .list-wishlist{
+            a{
+                margin: .5rem auto 1rem;
+                width: 100%;
+            }
+        }
+    }
+}

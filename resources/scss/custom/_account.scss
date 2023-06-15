@@ -1,0 +1,280 @@
+
+$primary: #007bff;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+
+.account{
+    margin: 3rem auto 5rem; padding: 0 0 0 1rem;
+    .account-settings .user-profile {
+        margin: 0 0 .7rem 0;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    .account-settings .user-profile .user-avatar {
+        margin: 0 0 1rem 0;
+    }
+    .account-settings .user-profile h5.user-name {
+        margin: 0 0 .6rem 0; color: var(--color);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .account-settings .user-profile h5.user-email {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #89909d;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .account-settings .about {
+        margin: 2rem 0 0 0;
+        text-align: center;
+    }
+    .account-settings .about h5 {
+        margin: 0 0 15px 0;
+        color: #007ae1;
+    }
+    .nav-pills{
+        a{
+            text-align: left;
+        }
+    }
+    h3, h1, h2, h4, h6{
+        text-align: left;
+        margin: 0 0 25px 0;
+        color: #007ae1; font-size: 1.3rem;
+    }
+    p{
+        text-align: left; margin: 0; padding: 0; font-size: .9rem;
+        color: var(--color);
+    }
+    .account-settings .about p {
+        font-size: 0.825rem;
+    }
+    .form-control {
+        border: 1px solid #cfd1d8;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-size: .825rem;
+        background: #ffffff;
+        color: #2e323c;
+    }
+    .card {
+        background: var(--back);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius);
+        width: auto; height: auto;
+    }
+    label{
+        text-align: left; width: 100%;
+        font-size: .9rem; letter-spacing: .6px;
+    }
+    .form-group{
+        margin: .5rem 0 1rem;
+        input{
+            font-size: .9rem; color: var(--color);
+        }
+    }
+    .buttons{
+        margin: 2rem 0 .5rem 0;
+        button{
+            font-size: .9rem; border-radius: .1rem;
+            margin: 0 0 0 .5rem;
+        }
+    }
+    img {
+		height: 100px;
+		width: 100px;
+		border-radius: 100%;
+		box-shadow: .1rem .1rem .5rem #7775;
+		border: 5px solid #fff;
+	}
+    .nav-pills{
+        a.nav-link{
+            padding:15px 20px;
+            border-bottom:1px solid #ddd;
+            border-radius:0;
+            color: rgb(60, 84, 93);
+            i{ width: 2rem; display: flex; justify-content: flex-start; font-size: 1.1rem; color: rgb(60, 84, 93); }
+        }
+        a.active{
+            background-color: #4ea7f0;
+            color: #FFF;
+            i{ color: #FFF; }
+        }
+    }
+    .main-card{
+        margin: 0 .2rem 0 -.5rem;
+        flex-wrap: nowrap; align-items: flex-start;
+    }
+    .form-check-input{
+        width: .9rem; height: .9rem;
+    }
+    .form-check-label{
+        padding: 0 3rem 0 .6rem;
+    }
+    .account-div .row .p{
+        font-size: 1.1em;
+    }
+    .payment-div{
+        min-width: 100%;
+        .alert-danger{
+            text-align: left; display: block;
+            font-size: .9rem;
+            a{
+                white-space: nowrap;
+            }
+        }
+    }
+    .right-card{
+        padding-left: 1.5rem;
+        max-width: 70%; min-width: 30%;
+        .card-body{
+            width: 100%;
+            padding-top: 1.7rem;
+        }
+    }
+    .left-card{
+        max-width: 22rem; min-width: 22rem;
+        .card-body{
+            width: 100%; padding-bottom: 2rem;
+            a:not(.active){
+                &:hover{
+                    background: rgba(97, 133, 140, 0.1);
+                }
+            }
+        }
+    }
+    .back{
+        top: 1.52rem; left: 1rem;
+        margin: 0 .5rem 0 0;
+        span{
+            font-size: 1.8rem; color: var(--color);
+            &:hover{
+                color: var(--color2);
+            }
+        }
+    }
+}
+.bookings{
+    margin: 1rem auto 3rem;
+    .head{
+        h1{
+            font-size: 1.2rem; color: $primary; margin: 1rem auto 1rem;
+            letter-spacing: 1px; cursor: default;
+            span{
+                font-size: 1.3rem; margin: 0 .5rem 0 0;
+            }
+        }
+        p{
+            font-size: .9rem; color: var(--color); margin: 0 auto 3rem;
+            padding: 0 0 1rem 0;
+            letter-spacing: 1px; border-bottom: 1px solid var(--border);
+        }
+    }
+    .lets{
+        background: rgb(233, 239, 239); padding: 2rem 1.5rem;
+        border-radius: var(--border-radius); margin: 4rem auto 0;
+        h1, p{
+            padding: 0; margin: 0 auto 1rem; color: var(--color1);
+            font-weight: bold; font-size: 1.3rem; line-height: 150%;
+        }
+        p{
+            font-weight: normal; padding: 0; margin: 0;
+            color: var(--color); font-size: 1rem; text-align: left;
+        }
+        img{
+            width: 20%; right: 1rem; top: -2rem;
+        }
+        .buttons{
+            margin: 1.5rem auto 0;
+            a{
+                padding: .6rem 3rem; color: var(--light-color1);
+                background: var(--site-color); border-radius: var(--border-radius);
+                &:hover{
+                    background: var(--site-color-hover);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .title{
+        margin: 0; font-size: 1.3rem; color: var(--color1);
+        font-weight: bold; letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .account .left-card{
+        min-width: 18rem;
+    }
+}
+@media (max-width: 1025px) {
+    .account{
+        .main-card{
+            width: 100%;
+        }
+        .left-card{
+            max-width: 20%;
+            .card-body, .card{
+                max-width: 100%;
+            }
+        }
+        .right-card{
+            max-width: 63%; padding: 0;
+            .card-body, .card{
+                max-width: 100%;
+                .table{
+                    .actions{
+                        .select-box, .input{
+                            width: 100%;
+                        }
+                        .search{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .account{
+        margin: 1.5rem auto 4rem;
+        .main-card{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .back{
+            display: flex;
+        }
+        .left-card{
+            max-width: 100%;
+            .card-body, .card{
+                max-width: 100%;
+            }
+        }
+        .right-card{
+            max-width: 100%; padding: 0;
+            display: none;
+            h6, h3{
+                margin-left: 2.5rem;
+            }
+            .card-body, .card{
+                max-width: 100%;
+            }
+        }
+    }
+    .bookings{
+        margin: 1.5rem auto 0;
+        .lets{
+            padding-bottom: 0;
+            img{
+                position: relative; width: 60%;
+                margin: 3rem auto 0;
+            }
+        }
+    }
+}

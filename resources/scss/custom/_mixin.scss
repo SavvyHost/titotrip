@@ -1,0 +1,106 @@
+@mixin Scroll ( $color: var(--scroll-color), $width: .6rem, $border: 0, $background: var(--scroll-back), $hover: var(--divs), $hovered: 1 ) {
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        background: $background;
+    }
+    @if ( $hovered == 1 ) {
+
+        &::-webkit-scrollbar-thumb { background: $hover; border-radius: $border; }
+
+        &:hover{ &::-webkit-scrollbar-thumb{ background-color: $color; } }
+
+    }
+    @else {
+      
+        &::-webkit-scrollbar-thumb { background: $color; border-radius: $border; }
+        
+    }
+    scroll-behavior: smooth;
+
+}
+@mixin Row_Number ( $row_number, $line_height ) {
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row_number;
+    line-height: $line_height;
+    max-height: $row_number * $line_height;
+
+}
+@mixin Flex ( $query ) {
+
+    @if ( $query == "flex" ) { display: flex; justify-content: center; align-items: center; }
+
+    @else if ( $query == "wrap" ) { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+    @else if ( $query == "start" ) { display: flex; justify-content: flex-start; align-items: center; }
+
+    @else if ( $query == "end" ) { display: flex; justify-content: flex-end; align-items: center; }
+
+    @else if ( $query == "space" ) { display: flex; justify-content: space-between; align-items: center; }
+
+    @else if ( $query == "around" ) { display: flex; justify-content: space-around; align-items: center; }
+
+    @else if ( $query == "column" ) { display: flex; justify-content: flex-start; align-items: center; flex-direction: column; }
+
+    @else if ( $query == "row" ) { display: flex; justify-content: flex-start; align-items: center; flex-direction: row }
+    
+    @else if ( $query == "align-start" ) { align-items: flex-start; }
+
+    @else if ( $query == "align-end" ) { align-items: flex-end; }
+
+}
+@mixin Loader ( $background, $width, $border:7px ) {
+
+    --bd: #{$border};
+    --n: 10;
+    --g: 1deg;
+    width:$width;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    background: conic-gradient(#0000, $background) content-box;
+    -webkit-mask:
+        repeating-conic-gradient(#0000 0deg,
+            #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+            #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+        radial-gradient(farthest-side,#0000 calc(98% - var(--bd)),#000 calc(100% - var(--bd)));
+            mask:
+        repeating-conic-gradient(#0000 0deg,
+            #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+            #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+        radial-gradient(farthest-side,#0000 calc(98% - var(--bd)),#000 calc(100% - var(--bd)));
+    -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+    animation: load 1s infinite steps(var(--n));
+    
+    @keyframes load { to{ transform: rotate(1turn) } }
+
+}
+@mixin Media ($point){
+
+    @if $point == bigx {
+        @media (max-width: 1250px) {  @content; }
+    }
+    @if $point == big {
+        @media (max-width: 1150px) {  @content; }
+    }
+    @if $point == mid {
+        @media (max-width: 850px) {  @content; }
+    }
+    @if $point == large {
+        @media (max-width: 1200px) {  @content; }
+    }
+    @if $point == small {
+        @media (max-width: 800px) { @content; }
+    }
+    @if $point == mobile {
+        @media (max-width: 600px) { @content; }
+    }
+
+}
